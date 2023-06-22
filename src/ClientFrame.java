@@ -91,7 +91,9 @@ public class ClientFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 try {
                     Client.testConnect(ipTextField.getText(), Integer.parseInt(portTextField.getText()));
+                    JOptionPane.showMessageDialog(contentPane, "连接成功！");
                 } catch (IOException ex) {
+                    JOptionPane.showMessageDialog(contentPane, "连接失败！");
                     throw new RuntimeException(ex);
                 }
             }
